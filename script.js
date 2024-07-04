@@ -274,4 +274,23 @@ const data = {
       }
     ]
   }
-  
+
+const mainNews = data.items.slice(0, 3);
+const smallNews = data.items.slice(3, 12);
+
+const mainNewsTemplate = document.getElementById('main-news-item');
+const smallNewsTemplate = document.getElementById('small-article-item');
+const mainNewsContainer = document.querySelector('.articles__big-column');
+const smallNewsContainer = document.querySelector('.articles__small-column');
+
+
+
+mainNews.forEach((item) => {
+    const element = mainNewsTemplate.content.cloneNode(true);
+    mainNewsContainer.appendChild(element);
+});
+
+smallNews.forEach((item) => {
+    const element = smallNewsTemplate.content.cloneNode(true);
+    smallNewsContainer.appendChild(element);
+});
